@@ -1,4 +1,4 @@
-package com.liangquan.a字节码分析;
+package com.liangquan.JVM.a字节码分析;
 
 public class simpleCode2 {
     public static void main(String[] args) {

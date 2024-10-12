@@ -1,4 +1,4 @@
-package com.liangquan.b类的生命周期.题;
+package com.liangquan.JVM.题;
 
 public class Test3 {
     public static void main(String[] args) {

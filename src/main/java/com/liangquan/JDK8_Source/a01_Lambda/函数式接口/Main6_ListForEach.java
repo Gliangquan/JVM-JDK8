@@ -1,35 +1,27 @@
 package com.liangquan.JDK8_Source.a01_Lambda.函数式接口;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @ClassName：Main5_线程
  * @Author: liangquan
  * @Date: 2024/9/28 11:27
- * @Description: 实现的功能？
+ * @Description: ListForeach
  */
-public class Main5_线程 {
+public class Main6_ListForEach {
 
     public static void main(String[] args) {
-        // 线程1
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Runnable");
-            }
-        };
-        new Thread(runnable).start();
+        List<String> list = Arrays.asList("hallo", "world", "liang", "quan");
 
-        // 线程2
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(1);
-            }
+        list.forEach(item -> {
+            System.out.println(item.toUpperCase());
         });
 
-        // 线程3
-        // Lambda简化写法
-        new Thread(() -> System.out.println("2")).start();
-        new Thread(System.out::println).start();
+        ArrayList<String> listString = new ArrayList<>();
+        list.forEach(item -> listString.add(item.toUpperCase()));
+        System.out.println("listString = " + listString);
 
     }
 }

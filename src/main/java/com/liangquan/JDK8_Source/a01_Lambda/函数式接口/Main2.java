@@ -4,24 +4,45 @@ package com.liangquan.JDK8_Source.a01_Lambda.函数式接口;
  * @ClassName：Main
  * @Author: liangquan
  * @Date: 2024/9/27 18:57
- * @Description: 函数式接口，使用匿名内部类和 Lambda 表达式
+ * @Description:
  */
-public class Main {
+
+@FunctionalInterface
+interface Main2FunctionInterfaceTest2{
+    void sayMessage();
+}
+
+public class Main2 {
+
+    public void toSay(Main2FunctionInterfaceTest2 functionInterfaceTest2){
+        System.out.println(1);
+        functionInterfaceTest2.sayMessage();
+        System.out.println(2);
+    }
+
+
     public static void main(String[] args) {
-
-        // 1. 匿名内部类 的方式创建
-        FunctionInterfaceTest functionInterfaceTest1 = new FunctionInterfaceTest() {
+        Main2 main2 = new Main2();
+        main2.toSay(new Main2FunctionInterfaceTest2() {
             @Override
-            public void sayMessage(String message) {
-                System.out.println("Message1: " + message);
+            public void sayMessage() {
+                System.out.println("mytest1");
             }
+        });
+
+        // 方法二：Lambda表达式
+        main2.toSay(() ->{
+            System.out.println("mytest2");
+        });
+
+        // 方法三
+        Main2FunctionInterfaceTest2 mytest3 = () -> {
+            System.out.println("mytest3");
         };
+        mytest3.sayMessage();
 
-        // 2. 使用Lambda表达式实现函数式接口
-        FunctionInterfaceTest functionInterfaceTest2 = (message) -> System.out.println("Message2: " + message);
-
-        // 调用sayMessage方法
-        functionInterfaceTest1.sayMessage("Hello, Java 8!");
-        functionInterfaceTest2.sayMessage("Hello, Java 8!");
+        System.out.println(mytest3.getClass());
+        System.out.println(mytest3.getClass().getSuperclass()); // Object
+        System.out.println(mytest3.getClass().getInterfaces()[0]); // FunctionInterfaceTest2
     }
 }

@@ -1,11 +1,7 @@
 package com.liangquan.JDK8_Source.a02_Function;
 
 
-import com.azul.crs.client.Utils;
-
-import java.io.Console;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -13,29 +9,40 @@ import java.util.function.Function;
  * @ClassName：Main1
  * @Author: liangquan
  * @Date: 2024/9/28 13:23
- * @Description: Function<T, R>
- *     T: 输入参数
- *     R: 返回参数
+ * @Description: 排序比较例子
  */
-public class Main1 {
+public class StringComparator {
     public static void main(String[] args) {
-        List<String> list = Arrays.asList("1", "2", "3");
+        List<String> list = Arrays.asList("v", "d", "b", "w", "g", "j");
 
-//        list.stream().map(item -> item.toUpperCase()).forEach(System.out::print);
-//        System.out.println();
-//        list.stream().map(String::toLowerCase).forEach(System.out::print);
-//        System.out.println();
+        // 写法一
+//        Collections.sort(list, new Comparator<String>() {
+//            @Override
+//            public int compare(String s1, String s2) {
+//                return s1.compareTo(s2);
+//            }
+//        });
+//        list.sort(Comparator.naturalOrder());
+//        System.out.println("list = " + list);
 
-        /* *
-         * toUpperCase 是没有接收参数的，只有一个返回 String
-         * 使用类 String 加 :: 调用 toUpperCase，这里调用 toUpperCase 的就是 Function<String, String> 的第一个类型，返回是第二个类型
-         */
-        Function<String, String> function = String::toUpperCase;
-        Consumer<String> consumer = System.out::print;
+        // 写法二
+//        Collections.sort(list,(String o1, String o2) -> {
+//            return o1.compareTo(o2);
+//        });
+//        System.out.println("list = " + list);
 
-        list.stream().map(String::toLowerCase).forEach(System.out::print);
-        list.stream().map(function).forEach(consumer);
-        System.out.println("function.getClass().getInterfaces()[0] = " + function.getClass().getInterfaces()[0]);
+        // 写法三
+//        Collections.sort(list,(o1, o2) -> o1.compareTo(o2));
+//        System.out.println("list = " + list);
+
+        // 写法四
+//        Collections.sort(list, String::compareTo);
+//        System.out.println("list = " + list);
+
+        // 写法四
+        list.sort(String::compareTo);
+        System.out.println("list = " + list);
+
 
     }
 }

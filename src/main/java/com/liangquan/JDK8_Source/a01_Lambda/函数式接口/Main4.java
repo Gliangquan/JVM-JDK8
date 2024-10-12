@@ -1,15 +1,13 @@
 package com.liangquan.JDK8_Source.a01_Lambda.函数式接口;
 
-import jdk.nashorn.internal.objects.annotations.Function;
-
 /**
  * @ClassName：Main
  * @Author: liangquan
  * @Date: 2024/9/27 18:57
- * @Description: Lambda 函数是接口 必须要有上下才能推断类型
+ * @Description: Lambda 函数式接口
  */
 
-public class Main3{
+public class Main4{
     public static void main(String[] args){
 
         // Lambda 表达式 ，相当于匿名内部类
@@ -28,7 +26,7 @@ public class Main3{
 }
 
 @FunctionalInterface
-interface Main3FunctionInterfaceTest1{
+interface Main4unctionInterfaceTest1{
     void func1();
 
     default void func2(){
@@ -38,6 +36,6 @@ interface Main3FunctionInterfaceTest1{
 
 
 @FunctionalInterface
-interface Main3FunctionInterfaceTest2{
+interface Main4FunctionInterfaceTest2{
     void func2();
 }

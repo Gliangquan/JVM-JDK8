@@ -1,47 +1,43 @@
 package com.liangquan.JDK8_Source.a01_Lambda.函数式接口;
 
+import jdk.nashorn.internal.objects.annotations.Function;
+
 /**
  * @ClassName：Main
  * @Author: liangquan
  * @Date: 2024/9/27 18:57
- * @Description:
+ * @Description: Lambda 函数是接口 必须要有上下才能推断类型
  */
 
-@FunctionalInterface
-interface FunctionInterfaceTest2{
-    void sayMessage();
+public class Main3 {
+    public static void main(String[] args) {
+
+        // Lambda 表达式 ，相当于匿名内部类
+        // () -> {}
+
+        // 需要上下文类型推断
+        Main3FunctionInterfaceTest1 main3FunctionInterfaceTest1 = () -> {
+            System.out.println("实现函数式接口：" + Thread.currentThread().getName());
+        };
+        main3FunctionInterfaceTest1.func1();
+        main3FunctionInterfaceTest1.func2();
+
+        Main3FunctionInterfaceTest2 main3FunctionInterfaceTest2 = () -> {
+        };
+    }
 }
 
-public class Main2 {
+@FunctionalInterface
+interface Main3FunctionInterfaceTest1 {
+    void func1();
 
-    public void toSay(FunctionInterfaceTest2 functionInterfaceTest2){
-        System.out.println(1);
-        functionInterfaceTest2.sayMessage();
-        System.out.println(2);
+    default void func2() {
+        System.out.println("default func2 = " + true);
     }
+}
 
 
-    public static void main(String[] args) {
-        Main2 main2 = new Main2();
-        main2.toSay(new FunctionInterfaceTest2() {
-            @Override
-            public void sayMessage() {
-                System.out.println("mytest1");
-            }
-        });
-
-        // 方法二：Lambda表达式
-        main2.toSay(() ->{
-            System.out.println("mytest2");
-        });
-
-        // 方法三
-        FunctionInterfaceTest2 mytest3 = () -> {
-            System.out.println("mytest3");
-        };
-
-        System.out.println(mytest3.getClass());
-        System.out.println(mytest3.getClass().getSuperclass()); // Object
-        System.out.println(mytest3.getClass().getInterfaces()[0]); // FunctionInterfaceTest2
-    }
+@FunctionalInterface
+interface Main3FunctionInterfaceTest2 {
+    void func2();
 }

@@ -13,7 +13,7 @@ public class SwingTest {
     public static void main(String[] args) {
 
         JFrame jFrame = new JFrame("My Frame");
-        JButton jButton = new JButton();
+        JButton jButton = new JButton("Click Me");
         jButton.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -21,7 +21,17 @@ public class SwingTest {
             }
         });
 
+        /** 使用 Lambda 表达式
+         * 这里的 event 的类型是 ActionEvent (ActionEvent event) 可以不用写，可以被推断出来
+         */
+        jButton.addActionListener(event -> {
+            System.out.println("button clicked");
+        });
+
         jFrame.add(jButton);
+        jFrame.pack();
+        jFrame.setVisible(true);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }
