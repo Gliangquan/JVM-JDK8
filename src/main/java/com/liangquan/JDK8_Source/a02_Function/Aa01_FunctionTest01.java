@@ -3,24 +3,24 @@ package com.liangquan.JDK8_Source.a02_Function;
 import java.util.function.Function;
 
 /**
- * @ClassName：FunctionTest01
+ * @ClassName：Aa01_FunctionTest01
  * @Author: liangquan
  * @Date: 2024/10/12 13:58
  * @Description: 高阶函数
  */
-public class FunctionTest01 {
+public class Aa01_FunctionTest01 {
 
     public static void main(String[] args) {
 
-        FunctionTest01 functionTest01 = new FunctionTest01();
+        Aa01_FunctionTest01 aa01_functionTest01 = new Aa01_FunctionTest01();
 
         // 传入的参数是一个函数
-        System.out.println(functionTest01.compute(1, value -> value * 2));
-        System.out.println(functionTest01.compute(2, value -> value + 5));
-        System.out.println(functionTest01.convert(4, value -> "你好：" + value));
+        System.out.println(aa01_functionTest01.compute(1, value -> value * 2));
+        System.out.println(aa01_functionTest01.compute(2, value -> value + 5));
+        System.out.println(aa01_functionTest01.convert(4, value -> "你好：" + value));
 
         // 返回值是一个函数
-        System.out.println(functionTest01.returnFunction().apply(2));
+        System.out.println(aa01_functionTest01.returnFunction().apply(2));
     }
 
 

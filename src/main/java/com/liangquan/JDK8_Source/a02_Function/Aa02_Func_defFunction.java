@@ -1,8 +1,5 @@
 package com.liangquan.JDK8_Source.a02_Function;
 
-import com.liangquan.JDK8_Source.a01_Lambda.函数式接口.FunctionInterfaceTest;
-
-import java.util.Comparator;
 import java.util.function.Function;
 
 /**
@@ -11,7 +8,7 @@ import java.util.function.Function;
  * @Date: 2024/10/12 15:08
  * @Description: Function中的默认方法
  */
-public class Func_defFunction {
+public class Aa02_Func_defFunction {
 
 
     /*
@@ -35,7 +32,7 @@ public class Func_defFunction {
  */
 
     public static void main(String[] args) {
-        Func_defFunction func_defFunction = new Func_defFunction();
+        Aa02_Func_defFunction func_defFunction = new Aa02_Func_defFunction();
 
         int i1 = func_defFunction.compute(2, value -> value * 5, value -> value + 1);
         int i2 = func_defFunction.compute2(2, value -> value * 5, value -> value + 1);
