@@ -1,0 +1,24 @@
+// 首行：指定语法版本
+syntax = "proto3";
+
+// 定义包名：生成的 Java 类会放在这个包下。
+package usersStart;
+
+// true表示：Protobuf 生成的 Java 类每个消息和枚举类型将生成单独的 .java 文件
+option java_multiple_files = true;
+// java_package 应该指定一个 Java 包名，与命令中的 ’--java_out=./src/main/java‘ 拼接
+option java_package = "com.liangquan.InterviewQuestion.A02_protoBuf.ProtoUsers";
+option java_outer_classname = "UsersProtos";
+
+// 定义 ProtoUsers 消息
+message ProtoUsers {
+  // 字段类型 字段名 = 字段唯一编号；
+  int32 id = 1;
+  string name = 2;
+  string password = 3;
+  int32 age = 4;
+}
+
+// 执行：
+// protoc -I src/main/java/com/liangquan/InterviewQuestion/A02_protoBuf --java_out=./src/main/java user.proto
+
