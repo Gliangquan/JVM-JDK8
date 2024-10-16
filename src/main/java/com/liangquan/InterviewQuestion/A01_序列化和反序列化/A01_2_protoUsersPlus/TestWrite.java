@@ -1,8 +1,8 @@
-package com.liangquan.InterviewQuestion.A03_protoUsersPlus;
+package com.liangquan.InterviewQuestion.A01_序列化和反序列化.A01_2_protoUsersPlus;
 
 
-import com.liangquan.InterviewQuestion.A03_protoUsersPlus.Contacts.Contacts;
-import com.liangquan.InterviewQuestion.A03_protoUsersPlus.Contacts.UserPlus;
+import com.liangquan.InterviewQuestion.A01_序列化和反序列化.A01_2_protoUsersPlus.Contacts.Contacts;
+import com.liangquan.InterviewQuestion.A01_序列化和反序列化.A01_2_protoUsersPlus.Contacts.UserPlus;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

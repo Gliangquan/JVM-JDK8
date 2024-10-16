@@ -1,4 +1,4 @@
-package com.liangquan.InterviewQuestion.A02_protoBuf.Users;
+package com.liangquan.InterviewQuestion.A01_序列化和反序列化.A01_1_protoBuf.Users;
 
 import java.io.Serializable;
 
