@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package proto3;
+
+option java_multiple_files = true;
+option java_package = "com.liangquan.InterviewQuestion.A03_protoUsersPlus.UsersPlus";
+option java_outer_classname = "UsersPlus";
+
+//message Phone{
+//  string number = 1;
+//}
+
+// 定义 UsersPlus 消息
+message UsersPlus {
+  string name = 1;
+  int32 age = 2;
+
+//  repeated string phone_numbers = 3;
+
+//  嵌套定义message
+  message Phone{
+    string number = 1;
+  }
+  repeated Phone phone = 3;
+}
+

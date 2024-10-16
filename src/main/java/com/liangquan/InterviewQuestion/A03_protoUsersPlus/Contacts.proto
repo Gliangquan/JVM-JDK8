@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proto3;
+
+option java_multiple_files = true;
+option java_package = "com.liangquan.InterviewQuestion.A03_protoUsersPlus.Contacts";
+//option java_outer_classname = "Contacts";
+
+// 定义 单个联系人 message
+message UserPlus {
+  string name = 1;
+  int32 age = 2;
+
+  message Phone {
+    string number = 1;
+  }
+  repeated Phone phone = 3;
+}
+
+// 定义 通讯录
+message Contacts {
+  repeated UserPlus users = 1;
+}
+
+// 执行：
+// protoc -I src/main/java/com/liangquan/InterviewQuestion/A03_protoUsersPlus/ --java_out=./src/main/java Contacts.proto
+
+
