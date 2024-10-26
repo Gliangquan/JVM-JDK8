@@ -1,7 +1,5 @@
 package com.liangquan.JDK8_Source.a01_Lambda.函数式接口;
 
-import jdk.nashorn.internal.objects.annotations.Function;
-
 /**
  * @ClassName：Main
  * @Author: liangquan

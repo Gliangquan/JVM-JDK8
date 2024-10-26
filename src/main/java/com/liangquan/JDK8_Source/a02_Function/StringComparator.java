@@ -2,8 +2,6 @@ package com.liangquan.JDK8_Source.a02_Function;
 
 
 import java.util.*;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * @ClassName：Main1
@@ -16,12 +14,14 @@ public class StringComparator {
         List<String> list = Arrays.asList("v", "d", "b", "w", "g", "j");
 
         // 写法一
-//        Collections.sort(list, new Comparator<String>() {
-//            @Override
-//            public int compare(String s1, String s2) {
-//                return s1.compareTo(s2);
-//            }
-//        });
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+                return s1.compareTo(s2);
+            }
+        });
+
+
 //        list.sort(Comparator.naturalOrder());
 //        System.out.println("list = " + list);
 
@@ -40,8 +40,8 @@ public class StringComparator {
 //        System.out.println("list = " + list);
 
         // 写法四
-        list.sort(String::compareTo);
-        System.out.println("list = " + list);
+//        list.sort(String::compareTo);
+//        System.out.println("list = " + list);
 
 
     }

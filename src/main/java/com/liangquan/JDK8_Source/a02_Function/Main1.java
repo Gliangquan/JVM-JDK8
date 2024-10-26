@@ -25,6 +25,7 @@ public class Main1 {
         /* *
          * toUpperCase 是没有接收参数的，只有一个返回 String
          * 使用类 String 加 :: 调用 toUpperCase，这里调用 toUpperCase 的就是 Function<String, String> 的第一个类型，返回是第二个类型
+         *
          */
         Function<String, String> function = String::toUpperCase;
         Consumer<String> consumer = System.out::print;
